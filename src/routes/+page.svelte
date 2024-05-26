@@ -135,28 +135,28 @@
 	});
 </script>
 
-<main>
-	<Split type="horizontal" initial={0.325}>
+<div class="container">
+	<Split type="horizontal" pos="33%">
 		{#snippet a()}
-			<section>Sidebar</section>
+			<section class="sidebar">Sidebar</section>
 		{/snippet}
 		{#snippet b()}
 			<section>
-				<Split type="vertical" initial={0.525}>
+				<Split type="vertical" pos="47%">
 					{#snippet a()}
-						<Split type="horizontal" initial={0.2125}>
+						<Split type="horizontal" pos="200px">
 							{#snippet a()}
-								<section>Filetree</section>
+								<section class="filetree">File Tree</section>
 							{/snippet}
 							{#snippet b()}
-								<section>
+								<section class="editor">
 									<div class="editor" bind:this={editor}></div>
 								</section>
 							{/snippet}
 						</Split>
 					{/snippet}
 					{#snippet b()}
-						<section>
+						<section class="output">
 							<h1>{Math.round(progress * 100)}%</h1>
 							<p>{message}</p>
 
@@ -175,7 +175,7 @@
 			</section>
 		{/snippet}
 	</Split>
-</main>
+</div>
 
 <style>
 	.logs {
@@ -185,7 +185,22 @@
 		flex-direction: column-reverse;
 	}
 
-	main {
+	.filetree,
+	.sidebar,
+	.output {
+		border: 0px solid rgb(var(--color-800));
+	}
+
+	.filetree,
+	.sidebar {
+		border-right-width: 1px;
+	}
+
+	.output {
+		border-top-width: 1px;
+	}
+
+	.container {
 		height: 100vh;
 		overflow: hidden;
 	}

@@ -4,12 +4,11 @@
 	 *  a: import("svelte").Snippet;
 	 *  b: import("svelte").Snippet;
 	 *  type: "horizontal" | "vertical";
-	 *  initial?: number;
+	 *  pos?: string;
 	 * }}
 	 */
-	let { a, b, type, initial = 0.5 } = $props();
+	let { a, b, type, pos = $bindable("50%") } = $props();
 
-	let percent = $state(initial);
 	let track = false;
 
 	/**
@@ -19,21 +18,23 @@
 </script>
 
 <svelte:window
+	onmouseup={() => (track = false)}
 	onmousemove={(e) => {
 		if (track && container) {
 			e.preventDefault();
 			const rect = container.getBoundingClientRect();
 			if (type === 'horizontal') {
-				percent = (e.clientX - rect.left) / rect.width;
+				const x = e.clientX - rect.left;
+				pos = pos.endsWith("%") ? `${(x / rect.width) * 100}%`  : `${x}px`;
 			} else {
-				percent = (e.clientY - rect.top) / rect.height;
+				const y = e.clientY - rect.top;
+				pos = pos.endsWith("%") ? `${(y / rect.height) * 100}%`  : `${y}px`;
 			}
 		}
 	}}
-	onmouseup={() => (track = false)}
 />
 
-<div class="container {type}" style:--percent="{percent * 100}%" bind:this={container}>
+<div class="container {type}" style:--pos={pos} bind:this={container}>
 	{@render a()}
 	{@render b()}
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -55,16 +56,15 @@
 
 		> .divider {
 			position: absolute;
-			background: red;
 		}
 
 		&.horizontal {
-			grid-template-columns: var(--percent) 1fr;
+			grid-template-columns: var(--pos) 1fr;
 
 			> .divider {
 				cursor: col-resize;
 				top: 0;
-				left: var(--percent);
+				left: var(--pos);
 				bottom: 0;
 				translate: -50%;
 				width: 3px;
@@ -72,14 +72,14 @@
 		}
 
 		&.vertical {
-			grid-template-rows: var(--percent) 1fr;
+			grid-template-rows: var(--pos) 1fr;
 
 			> .divider {
 				cursor: row-resize;
 				left: 0;
 				right: 0;
 
-				top: var(--percent);
+				top: var(--pos);
 				translate: 0 -50%;
 				height: 3px;
 			}

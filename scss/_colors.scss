@@ -1,0 +1,52 @@
+:root {
+	--bg-50: 249 246 249;
+	--bg-100: 241 237 241;
+	--bg-200: 223 215 224;
+	--bg-300: 195 180 197;
+	--bg-400: 163 139 165;
+	--bg-500: 137 108 139;
+	--bg-600: 112 87 114;
+	--bg-700: 92 71 93;
+	--bg-800: 78 61 79;
+	--bg-900: 67 54 68;
+	--bg-950: 25 20 25;
+
+	--on-bg-50: var(--bg-900);
+	--on-bg-100: var(--bg-900);
+	--on-bg-200: var(--bg-900);
+	--on-bg-300: var(--bg-900);
+	--on-bg-400: var(--bg-100);
+	--on-bg-500: var(--bg-100);
+	--on-bg-600: var(--bg-100);
+	--on-bg-700: var(--bg-100);
+	--on-bg-800: var(--bg-100);
+	--on-bg-900: var(--bg-100);
+	--on-bg-950: var(--bg-100);
+}
+
+:root,
+.--bg {
+	--color-50: var(--bg-50);
+	--color-100: var(--bg-100);
+	--color-200: var(--bg-200);
+	--color-300: var(--bg-300);
+	--color-400: var(--bg-400);
+	--color-500: var(--bg-500);
+	--color-600: var(--bg-600);
+	--color-700: var(--bg-700);
+	--color-800: var(--bg-800);
+	--color-900: var(--bg-900);
+	--color-950: var(--bg-950);
+
+	--on-color-50: var(--on-bg-50);
+	--on-color-100: var(--on-bg-100);
+	--on-color-200: var(--on-bg-200);
+	--on-color-300: var(--on-bg-300);
+	--on-color-400: var(--on-bg-400);
+	--on-color-500: var(--on-bg-500);
+	--on-color-600: var(--on-bg-600);
+	--on-color-700: var(--on-bg-700);
+	--on-color-800: var(--on-bg-800);
+	--on-color-900: var(--on-bg-900);
+	--on-color-950: var(--on-bg-950);
+}
