@@ -2,10 +2,14 @@
   "name": "common",
   "module": "index.ts",
   "type": "module",
-    "scripts": {
-        "dev": "vite dev"
-    },
+  "scripts": {
+    "dev": "vite dev"
+  },
   "dependencies": {
+    "@pivotass/zvelte": "^0.3.15",
     "vite": "^5.2.11"
+  },
+  "devDependencies": {
+    "sass": "^1.77.2"
   }
 }
