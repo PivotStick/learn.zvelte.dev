@@ -7,7 +7,6 @@
 	import { EditorView, keymap } from '@codemirror/view';
 	import { EditorState } from '@codemirror/state';
 	import { indentWithTab } from '@codemirror/commands';
-	import { javascript } from '@codemirror/lang-javascript';
 	import Split from '$lib/components/Split.svelte';
 
 	/**
@@ -152,12 +151,10 @@
 		if (e.data === 'style') {
 			if (iframe) {
 				loaded = true;
-				for (const styleSheet of document.styleSheets) {
-					const text = styleSheet.ownerNode?.textContent;
-					if (text) {
-						iframe.contentWindow?.postMessage('style:' + text, '*');
-					}
-				}
+				const allRules = [...document.styleSheets]
+					.flatMap((styleSheet) => [...styleSheet.cssRules].map((r) => r.cssText).join('\n'))
+					.join('\n');
+				iframe.contentWindow?.postMessage('style:' + allRules, '*');
 			}
 		}
 	}}
