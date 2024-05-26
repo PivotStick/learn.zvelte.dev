@@ -2,6 +2,9 @@
   "name": "common",
   "module": "index.ts",
   "type": "module",
+    "scripts": {
+        "dev": "vite dev"
+    },
   "dependencies": {
     "vite": "^5.2.11"
   }
