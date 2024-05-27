@@ -1,2 +1,2 @@
 import './bundle-content/index.js';
-import './generate-index/index.js';
+import './generate-content/index.js';

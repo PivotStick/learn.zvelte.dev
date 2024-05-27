@@ -1,40 +1,10 @@
-import { error } from '@sveltejs/kit';
-import { readdirSync } from 'fs';
-
-/**
- * @param {string} dir
- */
-function isValid(dir) {
-	return /^\d{2}-/.test(dir);
-}
+import content from '$lib/client/adapters/common/index.json';
 
 /**
  * @type {import("./$types").PageServerLoad}
  */
 export async function load({ params }) {
-	// const base = "content/tutorial";
-	// const parts = (await readdir(base)).filter(isValid);
-	//
-	// const partStubs = [];
-	//
-	// for (const part of parts) {
-	//     const chapters = (await readdir(`${base}/${part}`)).filter(isValid);
-	//
-	//     const partStub = {
-	//
-	//     }
-	// }
-
-	// const cwd = "content/tutorial";
-	const exercises = [''];
-	const test = readdirSync('content/tutorial');
-
-	let readme = null;
-
-	// if (!readme) throw error(404, "Exercise not found")
-
 	return {
-		readme,
-		test
+		content
 	};
 }

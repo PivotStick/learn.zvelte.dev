@@ -10,7 +10,6 @@
 	import Split from '$lib/components/Split.svelte';
 
 	let { data } = $props();
-
 	console.log(data);
 
 	/**

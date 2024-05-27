@@ -1,8 +1,9 @@
 import AdmZip from 'adm-zip';
 import { execSync } from 'child_process';
-import * as esbuild from 'esbuild';
-import { writeFileSync, readdirSync, readFileSync } from 'fs';
+import { writeFileSync, readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
+import * as esbuild from 'esbuild';
+import glob from 'tiny-glob/sync.js';
 
 const cwd = 'content/tutorial/common';
 
@@ -10,21 +11,13 @@ execSync('npm ci', { cwd });
 
 const zip = new AdmZip();
 
-function glob(dir = '') {
-	const entries = readdirSync(dir, { withFileTypes: true });
-	for (const entry of entries) {
-		const path = `${dir}/${entry.name}`;
-
-		if (entry.isFile()) {
-			const file = path.replace(cwd + '/', '');
-			zip.addFile(file, readFileSync(path));
-		} else if (entry.isDirectory() && entry.name !== 'node_modules') {
-			glob(path);
-		}
+for (const file of glob('**', { cwd, filesOnly: true, dot: true })) {
+	if (file.startsWith('node_modules')) {
+		continue;
 	}
-}
 
-glob(cwd);
+	zip.addFile(file, readFileSync(`${cwd}/${file}`));
+}
 
 writeFileSync('src/lib/client/adapters/common/common.zip', zip.toBuffer());
 
