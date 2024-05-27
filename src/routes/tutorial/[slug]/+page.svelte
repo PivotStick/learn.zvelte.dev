@@ -11,6 +11,8 @@
 
 	let { data } = $props();
 
+	console.log(data);
+
 	/**
 	 * @type {HTMLIFrameElement=}
 	 */

@@ -1,37 +1,40 @@
-import { error } from "@sveltejs/kit";
+import { error } from '@sveltejs/kit';
+import { readdirSync } from 'fs';
 
 /**
- * @param {string} dir 
+ * @param {string} dir
  */
 function isValid(dir) {
-    return /^\d{2}-/.test(dir);
+	return /^\d{2}-/.test(dir);
 }
 
 /**
  * @type {import("./$types").PageServerLoad}
  */
 export async function load({ params }) {
-    // const base = "content/tutorial";
-    // const parts = (await readdir(base)).filter(isValid);
-    //
-    // const partStubs = [];
-    //
-    // for (const part of parts) {
-    //     const chapters = (await readdir(`${base}/${part}`)).filter(isValid);
-    //
-    //     const partStub = {
-    //
-    //     }
-    // }
+	// const base = "content/tutorial";
+	// const parts = (await readdir(base)).filter(isValid);
+	//
+	// const partStubs = [];
+	//
+	// for (const part of parts) {
+	//     const chapters = (await readdir(`${base}/${part}`)).filter(isValid);
+	//
+	//     const partStub = {
+	//
+	//     }
+	// }
 
-    // const cwd = "content/tutorial";
-    // const exercises = [""]
+	// const cwd = "content/tutorial";
+	const exercises = [''];
+	const test = readdirSync('content/tutorial');
 
-    let readme = null;
+	let readme = null;
 
-    // if (!readme) throw error(404, "Exercise not found")
+	// if (!readme) throw error(404, "Exercise not found")
 
-    return {
-        readme
-    }
+	return {
+		readme,
+		test
+	};
 }
