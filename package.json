@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "vite dev",
+    "dev": "node scripts/bundle-content && vite dev",
     "build": "node scripts/bundle-content && vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
@@ -35,6 +35,7 @@
     "@webcontainer/api": "^1.1.9",
     "adm-zip": "^0.5.12",
     "ansi-to-html": "^0.7.2",
-    "codemirror": "^6.0.1"
+    "codemirror": "^6.0.1",
+    "tiny-glob": "^0.2.9"
   }
 }

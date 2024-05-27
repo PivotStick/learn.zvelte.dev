@@ -1,6 +1,2 @@
-import "./main.scss";
-import App from "./src/lib/App.twig";
-
-App({
-    target: document.getElementById("root")
-})
+import './main.scss';
+import './src/app.js';
