@@ -35,7 +35,6 @@
     "@webcontainer/api": "^1.1.9",
     "adm-zip": "^0.5.12",
     "ansi-to-html": "^0.7.2",
-    "codemirror": "^6.0.1",
-    "tiny-glob": "^0.2.9"
+    "codemirror": "^6.0.1"
   }
 }

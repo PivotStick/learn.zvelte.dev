@@ -1,6 +1,4 @@
 import { error } from "@sveltejs/kit";
-import { readFile, readdir } from "fs/promises"
-import glob from "tiny-glob";
 
 /**
  * @param {string} dir 
@@ -26,25 +24,12 @@ export async function load({ params }) {
     //     }
     // }
 
-    const cwd = "content/tutorial";
-    const exercises = await glob("[0-9][0-9]-*/[0-9][0-9]-*/[0-9][0-9]-*/README.md", {
-        cwd
-    })
+    // const cwd = "content/tutorial";
+    // const exercises = [""]
 
     let readme = null;
 
-    for (let i = 0; i < exercises.length; i++) {
-        const file = exercises[i];
-        const [partDir, chapterDir, exerciseDir] = file.split("/")
-        const exerciseSlug = exerciseDir.slice(3);
-
-        if (exerciseSlug === params.slug) {
-            readme = await readFile(`${cwd}/${file}`, "utf8");
-            break;
-        }
-    }
-
-    if (!readme) throw error(404, "Exercise not found")
+    // if (!readme) throw error(404, "Exercise not found")
 
     return {
         readme
