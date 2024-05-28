@@ -165,7 +165,7 @@
 />
 
 <div class="container">
-	<Split type="horizontal" pos="33%">
+	<Split type="horizontal" min="360px" max="50%" pos="33%">
 		{#snippet a()}
 			<section class="sidebar">
 				<Sidebar {data} />
@@ -173,9 +173,9 @@
 		{/snippet}
 		{#snippet b()}
 			<section>
-				<Split type="vertical" pos="50%">
+				<Split type="vertical" min="100px" max="-4.1rem" pos="50%">
 					{#snippet a()}
-						<Split type="horizontal" pos="200px">
+						<Split type="horizontal" min="120px" max="300px" pos="200px">
 							{#snippet a()}
 								<section class="filetree">File Tree</section>
 							{/snippet}
