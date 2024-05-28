@@ -1,5 +1,5 @@
 import { readFile, readdir, stat, writeFile } from 'fs/promises';
-import { transform } from './markdown';
+import { transform } from './markdown.js';
 
 async function json(path) {
 	return JSON.parse(await readFile(path, 'utf8'));
