@@ -196,8 +196,8 @@
 							{#if !loaded}
 								<div class="loading">
 									<img src="/zvelte-logo-outlined.svg" alt="" />
-									<p>{message}</p>
 									<div class="progress" style:--percent="{progress * 100}%"></div>
+									<p>{message}</p>
 								</div>
 							{/if}
 
@@ -299,11 +299,11 @@
 			gap: 1rem;
 
 			img {
-				opacity: 0.15;
+				opacity: 0.125;
+				mix-blend-mode: screen;
 			}
 
 			p {
-				font-size: 2rem;
 				opacity: 0.5;
 			}
 
@@ -312,7 +312,7 @@
 				height: 0.5rem;
 				border-radius: 1rem;
 				width: 12rem;
-				background-color: rgba(var(--color-900) / 25%);
+				background-color: rgba(var(--color-900) / 75%);
 
 				&::after {
 					content: '';
@@ -325,7 +325,7 @@
 					border-radius: 1rem;
 
 					transition-property: width;
-					background-color: rgb(var(--color-900));
+					background-color: rgb(var(--color-800));
 				}
 			}
 		}
