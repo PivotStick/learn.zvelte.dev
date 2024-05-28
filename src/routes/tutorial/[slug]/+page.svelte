@@ -8,9 +8,10 @@
 	import { EditorState } from '@codemirror/state';
 	import { indentWithTab } from '@codemirror/commands';
 	import Split from '$lib/components/Split.svelte';
+	import Sidebar from './Sidebar.svelte';
 
 	let { data } = $props();
-	console.log(data);
+	console.log(data.content);
 
 	/**
 	 * @type {HTMLIFrameElement=}
@@ -166,7 +167,9 @@
 <div class="container">
 	<Split type="horizontal" pos="33%">
 		{#snippet a()}
-			<section class="sidebar"><pre>{data.readme}</pre></section>
+			<section class="sidebar">
+				<Sidebar {data} />
+			</section>
 		{/snippet}
 		{#snippet b()}
 			<section>
@@ -230,6 +233,10 @@
 	.filetree,
 	.sidebar {
 		border-right-width: 1px;
+	}
+
+	.sidebar {
+		overflow: auto;
 	}
 
 	.output {

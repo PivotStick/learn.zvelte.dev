@@ -1,5 +1,5 @@
-import glob from 'tiny-glob';
 import { readFile, readdir, stat, writeFile } from 'fs/promises';
+import { transform } from './markdown';
 
 async function json(path) {
 	return JSON.parse(await readFile(path, 'utf8'));
@@ -7,6 +7,15 @@ async function json(path) {
 
 function isValid(name = '') {
 	return /^\d{2}-/.test(name);
+}
+
+async function exists(path = '') {
+	try {
+		await stat(path);
+		return true;
+	} catch {
+		return false;
+	}
 }
 
 async function main() {
@@ -25,9 +34,11 @@ async function main() {
 		};
 
 		try {
-			const info = await stat(`${cwd}/${partDir}/common`);
+			const commonDir = `${cwd}/${partDir}/common`;
+			const info = await stat(commonDir);
 			if (info.isDirectory()) {
 				// todo generate common stubs
+				part.common = await toStubs(commonDir);
 			}
 		} catch (error) {}
 
@@ -44,13 +55,28 @@ async function main() {
 				const dir = `${cwd}/${partDir}/${chapterDir}/${exerciseDir}`;
 
 				const text = await readFile(`${dir}/README.md`, 'utf-8');
-				const { frontmatter } = extractFrontmatter(text, dir);
+				const { frontmatter, markdown } = extractFrontmatter(text, dir);
 				const { title } = frontmatter;
 
-				chapter.exercises.push({
+				const exercise = {
 					slug: exerciseDir.slice(3),
-					title
-				});
+					title,
+					markdown: await transform(markdown, {})
+				};
+
+				if (await exists(`${dir}/app-a`)) {
+					exercise['app-a'] = await toStubs(`${dir}/app-a`);
+				} else {
+					throw new Error(`app-a is a required directoy`);
+				}
+
+				if (await exists(`${dir}/app-b`)) {
+					exercise['app-b'] = await toStubs(`${dir}/app-b`);
+				} else {
+					exercise['app-b'] = null;
+				}
+
+				chapter.exercises.push(exercise);
 			}
 
 			part.chapters.push(chapter);
@@ -59,10 +85,33 @@ async function main() {
 		content.parts.push(part);
 	}
 
-	await writeFile('src/lib/client/adapters/common/index.json', JSON.stringify(content));
+	await writeFile('src/lib/client/adapters/common/content.json', JSON.stringify(content));
 }
 
 main();
+
+async function toStubs(dir = '') {
+	const tree = {};
+
+	async function walk(dir = '', tree) {
+		const entries = await readdir(dir, { withFileTypes: true });
+		for (const entry of entries) {
+			tree[entry.name] = {};
+
+			if (entry.isDirectory()) {
+				await walk(`${dir}/${entry.name}`, (tree[entry.name].directory = {}));
+			} else {
+				tree[entry.name].file = {
+					contents: await readFile(`${dir}/${entry.name}`, 'utf8')
+				};
+			}
+		}
+	}
+
+	await walk(dir, tree);
+
+	return tree;
+}
 
 /**
  * @param {string} markdown

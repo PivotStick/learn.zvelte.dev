@@ -8,10 +8,17 @@
 
 	--font-mono: 'Fira Mono', monospace;
 
+	--border-radius: 0.3rem;
+
 	font-family: var(--font-main);
 
 	background-color: rgb(var(--color-950));
 	color: rgb(var(--on-color-950));
+
+	font-synthesis: style;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 *,
@@ -62,4 +69,8 @@ button {
 		width: 2.5rem;
 		height: 2.5rem;
 	}
+}
+
+pre {
+	font-family: var(--font-mono);
 }
