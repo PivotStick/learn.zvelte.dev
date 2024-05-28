@@ -6,23 +6,31 @@
 </script>
 
 <div class="container">
-	<nav>Nav</nav>
+	<nav>
+		<img src="/zvelte-logo.svg" alt="" />
+	</nav>
 	<main>
 		{@render children()}
 	</main>
 </div>
 
-<style>
+<style lang="scss">
 	.container {
 		display: grid;
 		height: 100dvh;
 		grid-template-rows: auto 1fr;
 	}
+
 	main {
 		overflow: hidden;
 	}
+
 	nav {
-		height: 3.75rem;
 		border-bottom: 1px solid rgb(var(--color-800));
+		padding: 1rem;
+
+		img {
+			height: 4rem;
+		}
 	}
 </style>

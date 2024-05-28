@@ -195,6 +195,7 @@
 
 							{#if !loaded}
 								<div class="loading">
+									<img src="/zvelte-logo-outlined.svg" alt="" />
 									<p>{message}</p>
 									<div class="progress" style:--percent="{progress * 100}%"></div>
 								</div>
@@ -296,6 +297,10 @@
 			align-items: center;
 
 			gap: 1rem;
+
+			img {
+				opacity: 0.15;
+			}
 
 			p {
 				font-size: 2rem;
