@@ -1,5 +1,6 @@
 import content from '$lib/client/adapters/common/content.json';
 import { error } from '@sveltejs/kit';
+import deepmerge from 'deepmerge';
 
 /**
  * @type {import("./$types").PageServerLoad}
@@ -19,12 +20,15 @@ export async function load({ params }) {
 							},
 							chapter: {
 								title: chapter.title,
-								slug: chapter.slug
+								slug: chapter.slug,
+								common: chapter.common
 							},
 							exercise: {
 								title: exercise.title,
 								slug: exercise.slug,
 								markdown: exercise.markdown,
+								common: deepmerge(part.common, chapter.common),
+								focus: chapter.focus,
 								'app-a': exercise['app-a'],
 								'app-b': exercise['app-b'] ?? null
 							}

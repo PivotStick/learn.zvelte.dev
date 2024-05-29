@@ -9,9 +9,10 @@
 	import { indentWithTab } from '@codemirror/commands';
 	import Split from '$lib/components/Split.svelte';
 	import Sidebar from './Sidebar.svelte';
+	import Filetree from './filetree/Filetree.svelte';
+	import { javascript } from '@codemirror/lang-javascript';
 
 	let { data } = $props();
-	console.log(data.content);
 
 	/**
 	 * @type {HTMLIFrameElement=}
@@ -39,29 +40,15 @@
 	 */
 	let vm;
 
-	const files = {
-		src: {
-			directory: {
-				lib: {
-					directory: {
-						'App.twig': {
-							file: {
-								contents: `<h1>Welcome!</h1>`
-							}
-						}
-					}
-				}
-			}
-		}
-	};
-
 	onMount(async () => {
 		message = 'Booting Web Container...';
 
 		vm = await WebContainer.boot();
 
+		await vm.mount(data.content.exercise.common);
+		await vm.mount(data.content.exercise['app-a']);
+
 		vm.on('server-ready', async (port, url) => {
-			await vm.mount(files);
 			step('Ready');
 			await tick();
 			if (iframe) {
@@ -125,22 +112,51 @@
 	 */
 	let editor;
 
-	onMount(() => {
-		const state = EditorState.create({
-			doc: files.src.directory.lib.directory['App.twig'].file.contents,
-			extensions: [basicSetup, keymap.of([indentWithTab])]
-		});
+	const focusedFile = $derived.by(() => {
+		const keys = data.content.exercise.focus.replace(/^\/+/, '').split('/');
+		const tree = data.content.exercise['app-a'];
 
+		// @ts-ignore
+		return /** @type {{ contents: string }} */ (
+			// @ts-ignore
+			keys.reduce((o, key) => o?.[key]?.directory ?? o?.[key]?.file, tree)
+		);
+	});
+
+	onMount(() => {
 		const view = new EditorView({
-			state,
 			parent: editor,
 			dispatchTransactions(trs) {
 				view.update(trs);
 				if (trs.some((tr) => tr.docChanged)) {
 					if (vm) {
-						vm.fs.writeFile('src/lib/App.twig', view.state.doc.toString());
+						focusedFile.contents = view.state.doc.toString();
+						vm.fs.writeFile(data.content.exercise.focus, focusedFile.contents);
 					}
 				}
+			}
+		});
+
+		/**
+		 * @type {typeof focusedFile}
+		 */
+		let lastFocusedFile;
+
+		$effect(() => {
+			if (lastFocusedFile !== focusedFile) {
+				lastFocusedFile = focusedFile;
+				const extensions = [basicSetup, keymap.of([indentWithTab])];
+
+				if (data.content.exercise.focus.endsWith('.js')) {
+					extensions.push(javascript());
+				}
+
+				const state = EditorState.create({
+					doc: focusedFile.contents,
+					extensions
+				});
+
+				view.setState(state);
 			}
 		});
 
@@ -177,7 +193,12 @@
 					{#snippet a()}
 						<Split type="horizontal" min="120px" max="300px" pos="200px">
 							{#snippet a()}
-								<section class="filetree">File Tree</section>
+								<section class="filetree">
+									<Filetree
+										tree={data.content.exercise['app-a']}
+										bind:focus={data.content.exercise.focus}
+									/>
+								</section>
 							{/snippet}
 							{#snippet b()}
 								<section class="editor">

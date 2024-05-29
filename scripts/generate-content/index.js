@@ -30,25 +30,20 @@ async function main() {
 		const part = {
 			slug: partDir,
 			title: (await json(`${cwd}/${partDir}/meta.json`)).title,
-			chapters: []
+			chapters: [],
+			common: await toStubs(`${cwd}/${partDir}/common`)
 		};
-
-		try {
-			const commonDir = `${cwd}/${partDir}/common`;
-			const info = await stat(commonDir);
-			if (info.isDirectory()) {
-				// todo generate common stubs
-				part.common = await toStubs(commonDir);
-			}
-		} catch (error) {}
 
 		for (const chapterDir of chapters) {
 			const exercises = (await readdir(`${cwd}/${partDir}/${chapterDir}`)).filter(isValid);
 
+			const meta = await json(`${cwd}/${partDir}/${chapterDir}/meta.json`);
 			const chapter = {
 				slug: chapterDir,
-				title: (await json(`${cwd}/${partDir}/${chapterDir}/meta.json`)).title,
-				exercises: []
+				title: meta.title,
+				focus: meta.focus,
+				exercises: [],
+				common: await toStubs(`${cwd}/${partDir}/common`)
 			};
 
 			for (const exerciseDir of exercises) {
@@ -91,6 +86,8 @@ async function main() {
 main();
 
 async function toStubs(dir = '') {
+	if (!(await exists(dir))) return null;
+
 	const tree = {};
 
 	async function walk(dir = '', tree) {
