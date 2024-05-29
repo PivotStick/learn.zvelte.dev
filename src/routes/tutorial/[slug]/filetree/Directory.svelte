@@ -18,7 +18,11 @@
 		{#if value.directory}
 			{@const open = value.directory.open ?? true}
 			<li>
-				<button class="directory" onclick={() => (value.directory.open = !open)}>
+				<button
+					class="directory"
+					class:focused={ctx.focus.startsWith(fullpath)}
+					onclick={() => (value.directory.open = !open)}
+				>
 					<i class="fa {open ? 'fa-folder-open' : 'fa-folder'}"></i>
 					{name}
 				</button>
@@ -50,7 +54,7 @@
 				padding: 0;
 				background: none;
 				font-size: inherit;
-				opacity: 0.5;
+				opacity: 0.25;
 
 				i {
 					$size: 1rem;
@@ -63,11 +67,13 @@
 
 					opacity: 0.5;
 				}
-			}
 
-			&:has(button.focused) {
-				> button {
+				&.focused {
 					opacity: 1;
+
+					&.file {
+						color: rgb(var(--color-400));
+					}
 				}
 			}
 		}

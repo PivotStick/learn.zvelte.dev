@@ -1,6 +1,6 @@
-import { mount } from "@pivotass/zvelte";
+import { mount } from '@pivotass/zvelte';
 
 mount({
-    target: document.body,
-    source: `<h1>Welcome!</h1>`
+	target: document.getElementById('root'),
+	source: `<h1>Welcome!</h1>`
 });

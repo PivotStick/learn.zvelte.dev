@@ -11,6 +11,7 @@
 	import Sidebar from './Sidebar.svelte';
 	import Filetree from './filetree/Filetree.svelte';
 	import { javascript } from '@codemirror/lang-javascript';
+	import { html } from '@codemirror/lang-html';
 
 	let { data } = $props();
 
@@ -149,6 +150,14 @@
 
 				if (data.content.exercise.focus.endsWith('.js')) {
 					extensions.push(javascript());
+				}
+
+				if (data.content.exercise.focus.endsWith('.twig')) {
+					extensions.push(
+						html({
+							selfClosingTags: true
+						})
+					);
 				}
 
 				const state = EditorState.create({

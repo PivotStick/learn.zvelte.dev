@@ -15,6 +15,17 @@
 		color: #9cdcfe;
 	}
 
+	// literal numbers
+	.ͼd {
+		color: #b5cea8;
+	}
+
+	// keywords
+	.ͼi,
+	.ͼc {
+		color: #569cd6;
+	}
+
 	.cm-line {
 		&.cm-activeLine {
 			background: none;
@@ -79,6 +90,4 @@
 			}
 		}
 	}
-	// "editorLineNumber.activeForeground": "",
-	// "editorLineNumber.foreground": "",
 }
