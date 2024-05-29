@@ -201,9 +201,7 @@
 								</section>
 							{/snippet}
 							{#snippet b()}
-								<section class="editor">
-									<div class="editor" bind:this={editor}></div>
-								</section>
+								<section class="editor" bind:this={editor}></section>
 							{/snippet}
 						</Split>
 					{/snippet}

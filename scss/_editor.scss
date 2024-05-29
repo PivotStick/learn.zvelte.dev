@@ -1,0 +1,84 @@
+.cm-editor {
+	height: 100%;
+
+	.ͼb {
+		color: #c586c0;
+	}
+
+	.ͼf,
+	.ͼe {
+		color: #ce9178;
+	}
+
+	.ͼg,
+	.ͼl {
+		color: #9cdcfe;
+	}
+
+	.cm-line {
+		&.cm-activeLine {
+			background: none;
+			outline: 2px solid rgba(var(--color-400) / 25%);
+			outline-offset: -2px;
+		}
+	}
+
+	.cm-selectionBackground {
+		border-radius: 0.25rem;
+	}
+
+	&.cm-focused {
+		outline: none;
+
+		.cm-cursor {
+			border-left-color: rgba(var(--color-100));
+		}
+
+		.cm-selectionBackground {
+			background-color: #3a3d41 !important;
+		}
+	}
+
+	.cm-content ::selection,
+	.cm-selectionBackground {
+		background-color: #add6ff26;
+	}
+
+	.cm-gutters {
+		background: none;
+		color: #6e7681;
+		border-right: none;
+
+		.cm-gutterElement {
+			transition-property: color;
+
+			&.cm-activeLineGutter {
+				color: #cccccc;
+				background: none;
+			}
+		}
+
+		.cm-lineNumbers {
+			.cm-gutterElement {
+				padding: 0 0 0 1.5rem;
+			}
+		}
+
+		.cm-foldGutter {
+			.cm-gutterElement {
+				padding: 0 0.5rem;
+
+				span {
+					display: block;
+					translate: 2px -4px;
+
+					&[title='Unfold line'] {
+						translate: 2px -1px;
+					}
+				}
+			}
+		}
+	}
+	// "editorLineNumber.activeForeground": "",
+	// "editorLineNumber.foreground": "",
+}
