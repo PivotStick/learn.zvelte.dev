@@ -193,7 +193,7 @@
 	<Split type="horizontal" min="360px" max="50%" pos="33%">
 		{#snippet a()}
 			<section class="sidebar">
-				<Sidebar {data} />
+				<Sidebar bind:data />
 			</section>
 		{/snippet}
 		{#snippet b()}

@@ -70,10 +70,6 @@
 
 				&.focused {
 					opacity: 1;
-
-					&.file {
-						color: rgb(var(--color-400));
-					}
 				}
 			}
 		}

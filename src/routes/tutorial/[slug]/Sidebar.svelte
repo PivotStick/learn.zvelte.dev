@@ -1,9 +1,13 @@
 <script>
+	import Menu from './Menu.svelte';
+
 	/**
 	 * @type {{ data: import("./$types").PageData }}
 	 */
-	let { data } = $props();
+	let { data = $bindable() } = $props();
 </script>
+
+<Menu bind:data />
 
 <div class="container">
 	{@html data.content.exercise.markdown}
