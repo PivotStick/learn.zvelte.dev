@@ -31,6 +31,18 @@
 			}
 		}
 
+		:global(.highlight) {
+			--color: #dcdc0033;
+
+			background: var(--color);
+			outline: 2px solid var(--color);
+			border-radius: 2px;
+		}
+
+		:global(.highlight.add) {
+			--color: #00ff002e;
+		}
+
 		:global(h2) {
 			border-bottom: 1px solid rgb(var(--color-900));
 			margin-top: 4rem;
@@ -101,6 +113,34 @@
 			padding: 0 0 1px;
 			box-shadow: inset 0 -1px rgb(var(--color-500));
 			text-decoration: none;
+		}
+
+		:global(.code-block) {
+			background-color: rgba(var(--color-900));
+			padding: 0;
+			display: block;
+			overflow: hidden;
+			border-radius: 0.25rem;
+
+			:global(.filename) {
+				display: flex;
+				gap: 0.65rem;
+				padding: 0.5rem 1rem;
+				align-items: center;
+				font-family: var(--font-mono);
+				font-size: 0.9rem;
+			}
+
+			:global(pre) {
+				:global(code) {
+					display: block;
+					padding: 0.5rem;
+					margin: 0;
+					background-color: rgba(var(--color-950) / 50%);
+					color: rgba(var(--color-50));
+					border-radius: 0;
+				}
+			}
 		}
 	}
 </style>

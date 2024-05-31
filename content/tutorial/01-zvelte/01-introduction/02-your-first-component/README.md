@@ -1,4 +1,3 @@
-
 ---
 title: Your first component
 ---
@@ -9,27 +8,25 @@ In Zvelte, an application is composed from one or more _components_. A component
 
 A component that just renders some static markup isn't very interesting. Let's add some data.
 
-First, add a script tag to your component and declare a `name` variable:
+First, a `name` property to the props of this component:
 
-```zvelte
-/// file: App.twig
-+++<script>
-    let name = 'zvelte';
-</script>+++
-
-<h1>Hello world!</h1>
+```js
+/// file: App.js
+export default function({ props }) {
+    +++props.name = 'zvelte';+++
+}
 ```
 
 Then, we can refer to `name` in the markup:
 
 ```zvelte
 /// file: App.twig
-<h1>Hello +++{name}+++!</h1>
+<h1>Hello +++{{ name }}+++!</h1>
 ```
 
-Inside the curly braces, we can put any JavaScript we want. Try changing `name` to `name.toUpperCase()` for a shoutier greeting.
+Inside the curly braces, we can put any twig expression we want. Try changing `name` to `name|upper` for a shoutier greeting.
 
 ```zvelte
 /// file: App.twig
-<h1>Hello {name+++.toUpperCase()+++}!</h1>
+<h1>Hello {{ name+++|upper+++ }}!</h1>
 ```

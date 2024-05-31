@@ -35,7 +35,7 @@ function highlight_spans(content, classname) {
 
 /** @type {Partial<import('marked').Renderer>} */
 const defaultRenderer = {
-    code: (source, language = '') => {
+	code: (source, language = '') => {
 		/** @type {Record<string, string>} */
 		const options = {};
 
@@ -89,7 +89,9 @@ const defaultRenderer = {
 				: escape_html(source);
 
 			html = `<div class="code-block">${
-				options.file ? `<span class="filename">${options.file}</span>` : ''
+				options.file
+					? `<span class="filename"><i class="fa fa-file-pen"></i>${options.file}</span>`
+					: ''
 			}<pre class='language-${plang}'><code>${highlighted}</code></pre></div>`;
 		}
 

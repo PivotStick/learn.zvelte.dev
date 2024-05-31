@@ -1,3 +1,28 @@
+$keyword: #569cd6;
+$identifier: #9cdcfe;
+$string: #ce9178;
+
+pre.language-javascript {
+	.token {
+		&.operator,
+		&.punctuation {
+			color: white;
+		}
+
+		&.string {
+			color: $string;
+		}
+
+		&.parameter {
+			color: $identifier;
+		}
+
+		&.keyword {
+			color: $keyword;
+		}
+	}
+}
+
 .cm-editor {
 	height: 100%;
 
@@ -7,12 +32,12 @@
 
 	.ͼf,
 	.ͼe {
-		color: #ce9178;
+		color: $string;
 	}
 
 	.ͼg,
 	.ͼl {
-		color: #9cdcfe;
+		color: $identifier;
 	}
 
 	// literal numbers
@@ -23,7 +48,7 @@
 	// keywords
 	.ͼi,
 	.ͼc {
-		color: #569cd6;
+		color: $keyword;
 	}
 
 	.cm-line {
