@@ -12,6 +12,7 @@
 	import Filetree from './filetree/Filetree.svelte';
 	import { javascript } from '@codemirror/lang-javascript';
 	import { html } from '@codemirror/lang-html';
+	import deepmerge from 'deepmerge';
 
 	let { data } = $props();
 
@@ -37,19 +38,50 @@
 	 */
 	let logs = $state([]);
 	/**
-	 * @type {WebContainer}
+	 * @type {WebContainer=}
 	 */
-	let vm;
+	let vm = $state();
+
+	let previousTree = {};
+	/**
+	 * @param {any} filetree
+	 */
+	async function reset(filetree) {
+		const filesToDelete = treeToFlat(previousTree);
+		await Promise.all(
+			filesToDelete.map((path) => {
+				return vm?.fs.rm(path, { force: true });
+			})
+		);
+
+		await vm?.mount((previousTree = filetree));
+	}
+
+	function treeToFlat(tree = {}) {
+		/** @type {string[]} */
+		const paths = [];
+
+		function walk(o, path = ['']) {
+			for (const key of Object.keys(o)) {
+				if (o[key].directory) {
+					walk(o[key].directory, [...path, key]);
+				} else {
+					paths.push([...path, key].join('/'));
+				}
+			}
+		}
+
+		walk(tree);
+
+		return paths;
+	}
 
 	onMount(async () => {
 		message = 'Booting Web Container...';
 
-		vm = await WebContainer.boot();
-
-		await vm.mount(data.content.exercise.common);
-		await vm.mount(data.content.exercise['app-a']);
-
-		vm.on('server-ready', async (port, url) => {
+		const rvm = (vm = await WebContainer.boot());
+		await rvm.mount(data.content.exercise.common);
+		rvm.on('server-ready', async (port, url) => {
 			step('Ready');
 			await tick();
 			if (iframe) {
@@ -81,7 +113,7 @@
 		 * @param {string[]} args
 		 */
 		const spawn = async (command, args) => {
-			const process = await vm.spawn(command, args);
+			const process = await rvm.spawn(command, args);
 			process.output.pipeTo(
 				new WritableStream({
 					write(chunk) {
@@ -106,6 +138,12 @@
 
 		step('Starting dev server...');
 		await spawn('npm', ['run', 'dev']);
+	});
+
+	$effect(() => {
+		if (vm) {
+			reset(data.content.exercise['app-a']);
+		}
 	});
 
 	/**

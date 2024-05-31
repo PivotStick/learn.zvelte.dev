@@ -41,6 +41,11 @@
 	 * @type {HTMLElement=}
 	 */
 	let navElement = $state(undefined);
+	let openedChapterPath = $state([data.content.part.slug, data.content.chapter.slug]);
+
+	$effect(() => {
+		openedChapterPath = [data.content.part.slug, data.content.chapter.slug];
+	});
 </script>
 
 <div class="container">
