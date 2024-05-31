@@ -213,6 +213,23 @@
 	});
 </script>
 
+<svelte:head>
+	<title>{data.content.chapter.title} / {data.content.exercise.title} • Zvelte Tutorial</title>
+
+	<meta name="twitter:title" content="{data.content.exercise.title} • Zvelte Tutorial" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@sveltejs" />
+	<meta name="twitter:creator" content="@sveltejs" />
+	<meta name="twitter:image" content="https://zvelte.dev/images/twitter-thumbnail.jpg" />
+	<meta property="twitter:domain" content="learn.zvelte.dev" />
+	<meta property="twitter:url" content="https://learn.zvelte.dev" />
+
+	<meta property="og:title" content="{data.content.exercise.title} • Zvelte Tutorial" />
+	<meta property="og:url" content="https://learn.zvelte.dev" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="https://zvelte.dev/images/twitter-thumbnail.jpg" />
+</svelte:head>
+
 <svelte:window
 	onmessage={(e) => {
 		if (e.data === 'style') {

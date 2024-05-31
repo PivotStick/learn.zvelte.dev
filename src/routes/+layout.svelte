@@ -5,6 +5,10 @@
 	let { children } = $props();
 </script>
 
+<svelte:head>
+	<title>Learn Zvelte</title>
+</svelte:head>
+
 <div class="container">
 	<nav>
 		<img src="/zvelte-logo.svg" alt="" />
