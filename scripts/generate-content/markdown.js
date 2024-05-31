@@ -7,8 +7,9 @@ import { Marked } from 'marked';
 const languages = {
 	bash: 'bash',
 	env: 'bash',
-	html: 'markup',
-	zvelte: 'markup',
+	html: 'html',
+	zvelte: 'html',
+	twig: 'html',
 	js: 'javascript',
 	css: 'css',
 	diff: 'diff',

@@ -23,6 +23,28 @@ pre.language-javascript {
 	}
 }
 
+pre.language-html {
+	.token {
+		&.punctuation {
+			color: white;
+			font-weight: initial;
+		}
+
+		&.attr-name {
+			color: $keyword;
+		}
+
+		&.attr-value {
+			color: $string;
+		}
+
+		&.tag {
+			color: rgb(var(--color-400));
+			font-weight: 900;
+		}
+	}
+}
+
 .cm-editor {
 	height: 100%;
 
