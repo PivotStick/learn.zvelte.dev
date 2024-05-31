@@ -27,7 +27,6 @@ pre.language-html {
 	.token {
 		&.punctuation {
 			color: white;
-			font-weight: initial;
 		}
 
 		&.attr-name {
@@ -39,8 +38,11 @@ pre.language-html {
 		}
 
 		&.tag {
-			color: rgb(var(--color-400));
-			font-weight: 900;
+			color: $keyword;
+
+			.token.punctuation {
+				color: rgba(white, 0.5);
+			}
 		}
 	}
 }
