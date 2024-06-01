@@ -41,7 +41,10 @@
 	 * @type {HTMLElement=}
 	 */
 	let navElement = $state(undefined);
-	let openedChapterPath = $state([data.content.part.slug, data.content.chapter.slug]);
+	/**
+	 * @type {string[]}
+	 */
+	let openedChapterPath = $state([]);
 
 	$effect(() => {
 		openedChapterPath = [data.content.part.slug, data.content.chapter.slug];
@@ -81,27 +84,53 @@
 			<nav transition:slide={{ easing: expoOut }} bind:this={navElement}>
 				<ul class="parts">
 					{#each data.index.parts as part, partIndex}
+						{@const partOpened =
+							openedChapterPath[0] === part.slug &&
+							part.chapters.some((c) => c.slug === openedChapterPath[1])}
+
 						<li class="part">
-							<button>Part {partIndex + 1}: {part.title}</button>
-							<ul class="chapters">
-								{#each part.chapters as chapter}
-									<li class="chapter">
-										<button><i class="fa fa-chevron-right"></i> {chapter.title}</button>
-										<ul class="exercises">
-											{#each chapter.exercises as exercise}
-												<li
-													class="exercise"
-													aria-current={$page.params.slug === exercise.slug ? 'page' : undefined}
-												>
-													<a href="/tutorial/{exercise.slug}" onclick={() => (open = false)}>
-														{exercise.title}
-													</a>
-												</li>
-											{/each}
-										</ul>
-									</li>
-								{/each}
-							</ul>
+							<button
+								onclick={() => {
+									if (!partOpened) openedChapterPath = [part.slug, part.chapters[0].slug];
+								}}
+							>
+								Part {partIndex + 1}: {part.title}
+							</button>
+							{#if partOpened}
+								<ul class="chapters">
+									{#each part.chapters as chapter}
+										{@const chapterOpened =
+											openedChapterPath[0] === part.slug && openedChapterPath[1] === chapter.slug}
+
+										<li class="chapter">
+											<button
+												onclick={() => {
+													if (!chapterOpened) openedChapterPath = [part.slug, chapter.slug];
+												}}
+											>
+												<i class="fa fa-chevron-right"></i>
+												{chapter.title}
+											</button>
+											{#if chapterOpened}
+												<ul class="exercises">
+													{#each chapter.exercises as exercise}
+														<li
+															class="exercise"
+															aria-current={$page.params.slug === exercise.slug
+																? 'page'
+																: undefined}
+														>
+															<a href="/tutorial/{exercise.slug}" onclick={() => (open = false)}>
+																{exercise.title}
+															</a>
+														</li>
+													{/each}
+												</ul>
+											{/if}
+										</li>
+									{/each}
+								</ul>
+							{/if}
 						</li>
 					{/each}
 				</ul>
