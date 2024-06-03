@@ -1,6 +1,7 @@
 $keyword: #569cd6;
 $identifier: #9cdcfe;
 $string: #ce9178;
+$comment: #7f848e;
 
 pre.language-javascript {
 	.token {
@@ -73,6 +74,14 @@ pre.language-html {
 	.ͼi,
 	.ͼc {
 		color: $keyword;
+	}
+
+	.ͼ5 {
+		color: white;
+	}
+
+	.ͼm {
+		color: $comment;
 	}
 
 	.cm-line {

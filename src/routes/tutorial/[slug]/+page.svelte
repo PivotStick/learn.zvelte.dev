@@ -303,10 +303,6 @@
 </div>
 
 <style>
-	.editor {
-		font-family: var(--font-mono);
-	}
-
 	.filetree,
 	.sidebar,
 	.output {

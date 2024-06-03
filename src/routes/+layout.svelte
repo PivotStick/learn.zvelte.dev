@@ -11,7 +11,9 @@
 
 <div class="container">
 	<nav>
-		<img src="/zvelte-logo.svg" alt="" />
+		<a href="/">
+			<img src="/zvelte-logo.svg" alt="" />
+		</a>
 	</nav>
 	<main>
 		{@render children()}

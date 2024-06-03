@@ -1,5 +1,6 @@
 @use 'scss/colors';
 @use 'scss/editor';
+@use 'scss/typography';
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -8,8 +9,8 @@
 		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
 	--font-mono: 'Fira Mono', monospace;
-
 	--border-radius: 0.3rem;
+	--page-spacing: 2rem;
 
 	font-family: var(--font-main);
 
