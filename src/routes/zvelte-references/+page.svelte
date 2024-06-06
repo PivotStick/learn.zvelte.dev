@@ -23,6 +23,11 @@
 					name: 'snippet',
 					slug: 'snippet',
 					wip: true
+				},
+				{
+					name: 'key',
+					slug: 'key',
+					wip: true
 				}
 			]
 		},
