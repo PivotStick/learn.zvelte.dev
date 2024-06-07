@@ -24,6 +24,7 @@
 		padding: var(--page-spacing);
 		height: 100%;
 		overflow: auto;
+		padding-bottom: calc(var(--page-spacing) + 50dvh);
 	}
 
 	.content {

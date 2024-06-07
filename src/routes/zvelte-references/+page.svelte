@@ -21,8 +21,7 @@
 				},
 				{
 					name: 'snippet',
-					slug: 'snippet',
-					wip: true
+					slug: 'snippet'
 				},
 				{
 					name: 'key',
