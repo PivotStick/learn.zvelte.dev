@@ -31,6 +31,22 @@
 			]
 		},
 		{
+			name: 'Special Tags',
+			slug: 'special-tags',
+			items: [
+				{
+					name: '@html',
+					slug: 'html',
+					wip: true
+				},
+				{
+					name: '@render',
+					slug: 'render',
+					wip: true
+				}
+			]
+		},
+		{
 			name: 'Filters',
 			slug: 'filters',
 			items: [
@@ -110,6 +126,11 @@
 				{
 					name: 'raw',
 					slug: 'raw',
+					wip: true
+				},
+				{
+					name: 'slice',
+					slug: 'slice',
 					wip: true
 				},
 				{
@@ -208,8 +229,10 @@
 		padding: var(--page-spacing);
 
 		display: flex;
-		gap: 12rem;
+		flex-direction: column;
+		gap: 6rem 0;
 		flex-wrap: wrap;
+		height: 100%;
 	}
 
 	section {
