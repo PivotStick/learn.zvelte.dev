@@ -130,8 +130,7 @@
 				},
 				{
 					name: 'slice',
-					slug: 'slice',
-					wip: true
+					slug: 'slice'
 				},
 				{
 					name: 'split',
