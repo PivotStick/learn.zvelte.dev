@@ -115,8 +115,7 @@
 				},
 				{
 					name: 'merge',
-					slug: 'merge',
-					wip: true
+					slug: 'merge'
 				},
 				{
 					name: 'nl2br',
