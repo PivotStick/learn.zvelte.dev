@@ -116,8 +116,7 @@
 				},
 				{
 					name: 'nl2br',
-					slug: 'nl2br',
-					wip: true
+					slug: 'nl2br'
 				},
 				{
 					name: 'raw',
