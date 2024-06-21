@@ -100,8 +100,7 @@
 				},
 				{
 					name: 'length',
-					slug: 'length',
-					wip: true
+					slug: 'length'
 				},
 				{
 					name: 'lower',
@@ -189,6 +188,48 @@
 					name: 'Others',
 					slug: 'others',
 					text: '(.., |, ~, [], ?:, ??)',
+					wip: true
+				}
+			]
+		},
+		{
+			name: 'Directives',
+			slug: 'directives',
+			items: [
+				{
+					name: 'OnDirective',
+					slug: 'on',
+					text: '(on:click, on:keyboard...)',
+					wip: true
+				},
+				{
+					name: 'BindDirective',
+					slug: 'bind',
+					text: '(bind:value, bind:innerHTML...)',
+					wip: true
+				},
+				{
+					name: 'TransitionDirective',
+					slug: 'transition',
+					text: '(transition:slide, in:scale, out:fly...)',
+					wip: true
+				},
+				{
+					name: 'ClassDirective',
+					slug: 'class',
+					text: '(class:name...)',
+					wip: true
+				},
+				{
+					name: 'UseDirective',
+					slug: 'use',
+					text: '(use:clickoutside...)',
+					wip: true
+				},
+				{
+					name: 'UseDirective',
+					slug: 'use',
+					text: '(use:clickoutside...)',
 					wip: true
 				}
 			]
