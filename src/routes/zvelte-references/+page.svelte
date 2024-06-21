@@ -162,8 +162,7 @@
 				{
 					name: 'Logic',
 					slug: 'logic',
-					text: '(and, or, not, ())',
-					wip: true
+					text: '(and, or, not, ())'
 				},
 				{
 					name: 'Comparisons',
