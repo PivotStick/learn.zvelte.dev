@@ -104,8 +104,7 @@
 				},
 				{
 					name: 'lower',
-					slug: 'lower',
-					wip: true
+					slug: 'lower'
 				},
 				{
 					name: 'map',
