@@ -167,8 +167,7 @@
 				{
 					name: 'Comparisons',
 					slug: 'comparisons',
-					text: '(==, !=, <, >, >=, <=)',
-					wip: true
+					text: '(==, !=, <, >, >=, <=)'
 				},
 				{
 					name: 'Others',
