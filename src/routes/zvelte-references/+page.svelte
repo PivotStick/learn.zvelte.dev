@@ -136,8 +136,7 @@
 				},
 				{
 					name: 'constant',
-					slug: 'constant',
-					wip: true
+					slug: 'constant'
 				}
 			]
 		},
