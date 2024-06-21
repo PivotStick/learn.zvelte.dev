@@ -28,8 +28,7 @@
 				},
 				{
 					name: 'set',
-					slug: 'set',
-					wip: true
+					slug: 'set'
 				},
 				{
 					name: 'snippet',
