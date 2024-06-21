@@ -108,8 +108,7 @@
 				},
 				{
 					name: 'map',
-					slug: 'map',
-					wip: true
+					slug: 'map'
 				},
 				{
 					name: 'merge',
