@@ -128,8 +128,7 @@
 				},
 				{
 					name: 'trim',
-					slug: 'trim',
-					wip: true
+					slug: 'trim'
 				},
 				{
 					name: 'upper',
