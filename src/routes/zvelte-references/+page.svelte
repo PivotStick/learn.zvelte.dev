@@ -1,4 +1,16 @@
 <script>
+	/**
+	 * @type {{
+	 *  name: string;
+	 *  slug: string;
+	 *  items: {
+	 *      name: string;
+	 *      slug: string;
+	 *      wip?: boolean;
+	 *      text?: string;
+	 *  }[]
+	 * }[]}
+	 */
 	let sections = [
 		{
 			name: 'Tags',
@@ -36,8 +48,7 @@
 			items: [
 				{
 					name: '@html',
-					slug: 'html',
-					wip: true
+					slug: 'html'
 				},
 				{
 					name: '@render',
