@@ -132,8 +132,7 @@
 				},
 				{
 					name: 'upper',
-					slug: 'upper',
-					wip: true
+					slug: 'upper'
 				},
 				{
 					name: 'constant',
