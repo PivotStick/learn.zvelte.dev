@@ -218,12 +218,6 @@
 					slug: 'use',
 					text: '(use:clickoutside...)',
 					wip: true
-				},
-				{
-					name: 'UseDirective',
-					slug: 'use',
-					text: '(use:clickoutside...)',
-					wip: true
 				}
 			]
 		}
