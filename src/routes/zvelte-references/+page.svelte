@@ -145,13 +145,14 @@
 			slug: 'operators',
 			items: [
 				{
-					name: 'in',
-					slug: 'in'
+					name: 'Containment Operator',
+					slug: 'in',
+					text: '(foo in [...])'
 				},
 				{
-					name: 'is',
+					name: 'Test Operator',
 					slug: 'is',
-					wip: true
+					text: '(foo is empty...)'
 				},
 				{
 					name: 'Math',
