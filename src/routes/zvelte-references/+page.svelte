@@ -172,8 +172,7 @@
 				{
 					name: 'Others',
 					slug: 'others',
-					text: '(.., |, ~, [], ?:, ??)',
-					wip: true
+					text: '(.., |, ~, [], ?:, ??)'
 				}
 			]
 		},
