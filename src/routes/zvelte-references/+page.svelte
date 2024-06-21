@@ -22,8 +22,7 @@
 				},
 				{
 					name: 'for',
-					slug: 'for',
-					wip: true
+					slug: 'for'
 				},
 				{
 					name: 'set',
