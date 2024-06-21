@@ -18,8 +18,7 @@
 			items: [
 				{
 					name: 'if',
-					slug: 'if',
-					wip: true
+					slug: 'if'
 				},
 				{
 					name: 'for',
