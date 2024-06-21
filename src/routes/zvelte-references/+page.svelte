@@ -52,8 +52,7 @@
 				},
 				{
 					name: '@render',
-					slug: 'render',
-					wip: true
+					slug: 'render'
 				}
 			]
 		},
