@@ -141,11 +141,11 @@
 	<td>{{ d.qty * d.price }}</td>
 {% endsnippet %}
 
-<zvelte key="./Table.twig" data="{{ fruits }}" header="{{ header }}" row="{{ row }}" />
+<zvelte key="./Table.zvelte" data="{{ fruits }}" header="{{ header }}" row="{{ row }}" />
 `.trim()}
 />
 
-<p>In "./Table.twig"...</p>
+<p>In "./Table.zvelte"...</p>
 
 <Editor
 	extensions={[twig()]}
@@ -182,7 +182,7 @@
 
 <!-- this is semantically the same as the above -->
 
-<zvelte key="./Table.twig" data="{{ fruits }}">
+<zvelte key="./Table.zvelte" data="{{ fruits }}">
     {% snippet header() %}
         <th>fruit</th>
         <th>qty</th>
@@ -208,7 +208,7 @@
 <Editor
 	extensions={[twig()]}
 	value={`
-<zvelte key="./Table.twig" data="{{ fruits }}">
+<zvelte key="./Table.zvelte" data="{{ fruits }}">
     <th>fruit</th>
     <th>qty</th>
     <th>price</th>
@@ -224,7 +224,7 @@
 `.trim()}
 />
 
-<p>In "./Table.twig"...</p>
+<p>In "./Table.zvelte"...</p>
 
 <Editor
 	extensions={[twig()]}

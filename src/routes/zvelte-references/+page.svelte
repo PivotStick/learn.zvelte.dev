@@ -34,8 +34,7 @@
 				},
 				{
 					name: 'key',
-					slug: 'key',
-					wip: true
+					slug: 'key'
 				}
 			]
 		},

@@ -2,7 +2,7 @@
 title: Your first component
 ---
 
-In Zvelte, an application is composed from one or more _components_. A component is a reusable self-contained block of code that encapsulates HTML, CSS and JavaScript that belong together, written into a `.twig` file. The `App.twig` file, open in the code editor to the right, is a simple component.
+In Zvelte, an application is composed from one or more _components_. A component is a reusable self-contained block of code that encapsulates HTML, CSS and JavaScript that belong together, written into a `.zvelte` file. The `App.zvelte` file, open in the code editor to the right, is a simple component.
 
 ## Adding data
 
@@ -20,13 +20,13 @@ export default function({ props }) {
 Then, we can refer to `name` in the markup:
 
 ```zvelte
-/// file: App.twig
+/// file: App.zvelte
 <h1>Hello +++{{ name }}+++!</h1>
 ```
 
-Inside the curly braces, we can put any twig expression we want. Try changing `name` to `name|upper` for a shoutier greeting.
+Inside the curly braces, we can put any zvelte expression we want. Try changing `name` to `name|upper` for a shoutier greeting.
 
 ```zvelte
-/// file: App.twig
+/// file: App.zvelte
 <h1>Hello {{ name+++|upper+++ }}!</h1>
 ```
