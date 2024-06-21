@@ -157,8 +157,7 @@
 				{
 					name: 'Math',
 					slug: 'math',
-					text: '(+, -, /, *)',
-					wip: true
+					text: '(+, -, /, *)'
 				},
 				{
 					name: 'Logic',
