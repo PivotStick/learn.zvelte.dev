@@ -225,6 +225,15 @@
 </script>
 
 <div class="page">
+	<section>
+		<h1>
+			{Math.round(
+				(sections.flatMap((s) => s.items.filter((i) => !i.wip)).length /
+					sections.flatMap((s) => s.items).length) *
+					100
+			)}% Done!
+		</h1>
+	</section>
 	{#each sections as section}
 		<section>
 			<h1>{section.name}</h1>
