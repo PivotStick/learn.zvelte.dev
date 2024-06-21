@@ -119,18 +119,12 @@
 					slug: 'nl2br'
 				},
 				{
-					name: 'raw',
-					slug: 'raw',
-					wip: true
-				},
-				{
 					name: 'slice',
 					slug: 'slice'
 				},
 				{
 					name: 'split',
-					slug: 'split',
-					wip: true
+					slug: 'split'
 				},
 				{
 					name: 'trim',
