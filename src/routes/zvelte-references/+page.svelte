@@ -146,8 +146,7 @@
 			items: [
 				{
 					name: 'in',
-					slug: 'in',
-					wip: true
+					slug: 'in'
 				},
 				{
 					name: 'is',
