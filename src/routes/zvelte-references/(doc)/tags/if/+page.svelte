@@ -7,19 +7,9 @@
 	extensions={[twig()]}
 	value={`
 {% if expression %}...{% endif %}
-`.trim()}
-/>
 
-<Editor
-	extensions={[twig()]}
-	value={`
 {% if expression %}...{% elseif expression %}...{% endif %}
-`.trim()}
-/>
 
-<Editor
-	extensions={[twig()]}
-	value={`
 {% if expression %}...{% else %}...{% endif %}
 `.trim()}
 />

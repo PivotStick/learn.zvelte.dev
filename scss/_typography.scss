@@ -138,4 +138,14 @@
 			}
 		}
 	}
+
+	.editor {
+		margin: 1rem 0;
+
+		.cm-line {
+			&.cm-activeLine {
+				outline: none;
+			}
+		}
+	}
 }
