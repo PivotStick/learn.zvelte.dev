@@ -14,7 +14,7 @@
 	<code>{`{{ @html "<div>" }}content{{ @html "</div>" }}`}</code>
 	will
 	<i>not</i> work, because <code>{'</div>'}</code> is not valid HTML. It also will <i>not</i> compile
-	Svelte code.
+	Zvelte code.
 </p>
 
 <blockquote>
