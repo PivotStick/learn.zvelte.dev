@@ -50,7 +50,7 @@
 />
 
 <p>
-	If a <code>key</code> expression is provided — which must uniquely identify each list item — Svelte
+	If a <code>key</code> expression is provided — which must uniquely identify each list item — Zvelte
 	will use it to diff the list when data changes, rather than adding or removing items at the end. The
 	key can be any object, but strings and numbers are recommended since they allow identity to persist
 	when the objects themselves change.

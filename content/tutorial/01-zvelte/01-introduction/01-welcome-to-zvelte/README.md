@@ -4,7 +4,7 @@ title: Welcome to Zvelte
 
 Welcome to the Zvelte tutorial! This will teach you everything you need to know to easily build web applications of all sizes, with high performance and a small footprint.
 
-You can also consult the [API docs](https://svelte.dev/docs) and the [examples](https://svelte.dev/examples), or — if you're impatient to start hacking on your machine locally — create a project with `npm init svelte`.
+You can also consult the [API docs](/docs/introduction) and the [examples](/examples), or — if you're impatient to start hacking on your machine locally — create a project with `npm init zvelte`.
 
 ## What is Zvelte?
 
@@ -12,18 +12,16 @@ Zvelte is a tool for building web applications. Like other user interface framew
 
 These components are _compiled_ into small, efficient JavaScript modules that eliminate overhead traditionally associated with UI frameworks.
 
-You can build your entire app with Zvelte (for example, using an application framework like [ZvelteKit](https://kit.svelte.dev), which this tutorial will cover), or you can add it incrementally to an existing codebase. You can also ship components as standalone packages that work anywhere.
+You can build your entire app with Zvelte, or you can add it incrementally to an existing codebase. You can also ship components as standalone packages that work anywhere.
 
 ## How to use this tutorial
 
 > You'll need to have basic familiarity with HTML, CSS and JavaScript to understand Zvelte.
 
-This tutorial is split into four main parts:
+This tutorial is split into two main parts:
 
-- [Basic Zvelte](/tutorial/welcome-to-svelte) (you are here)
+- [Basic Zvelte](/tutorial/welcome-to-zvelte) (you are here)
 - [Advanced Zvelte](/tutorial/tweens)
-- [Basic ZvelteKit](/tutorial/introducing-sveltekit)
-- [Advanced ZvelteKit](/tutorial/optional-params)
 
 Each section will present an exercise designed to illustrate a feature. Later exercises build on the knowledge gained in earlier ones, so it's recommended that you go from start to finish. If necessary, you can navigate via the menu above.
 
