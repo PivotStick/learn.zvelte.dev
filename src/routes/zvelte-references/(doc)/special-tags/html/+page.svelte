@@ -29,7 +29,7 @@
 <Editor
 	extensions={[twig()]}
 	value={`<div class="blog-post">
-	<h1>{post.title}</h1>
-	{@html post.content}
+	<h1>{{ post.title }}</h1>
+    {{ @html post.content }}
 </div>`}
 />
