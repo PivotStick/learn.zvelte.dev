@@ -20,7 +20,7 @@
 				<a href="/docs/introduction">DOC</a>
 			</li>
 			<li>
-				<a href="/tutorial">Tutorial</a>
+				<a href="/tutorial" data-sveltekit-reload>Tutorial</a>
 			</li>
 			<li>
 				<a href="/zvelte-references">Zvelte References</a>

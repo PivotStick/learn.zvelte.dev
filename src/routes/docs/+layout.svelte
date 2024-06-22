@@ -56,8 +56,8 @@
 							<li>
 								<a
 									aria-current={$page.url.pathname === href ? 'page' : undefined}
-									{href}
 									aria-disabled={wip}
+									{href}
 								>
 									{text}
 								</a>
