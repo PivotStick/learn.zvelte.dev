@@ -45,6 +45,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>{section.text} • Docs • Zvelte</title>
+</svelte:head>
+
 <div class="container">
 	<nav aria-label="Docs">
 		<ul class="sidebar">
