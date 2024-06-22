@@ -92,10 +92,23 @@
 	}
 
 	a {
-		color: rgb(var(--color-500));
-		padding: 0 0 1px;
 		box-shadow: inset 0 -1px rgb(var(--color-500));
-		text-decoration: none;
+		opacity: 0.75;
+		transition-property: opacity, box-shadow;
+
+		&:hover {
+			opacity: 0.85;
+			box-shadow: inset 0 -2px rgb(var(--color-500));
+		}
+
+		&[aria-disabled='true'] {
+			pointer-events: none;
+			opacity: 0.5;
+		}
+
+		&[aria-current='page'] {
+			box-shadow: inset 0 0px rgb(var(--color-800));
+		}
 	}
 
 	.code-block {

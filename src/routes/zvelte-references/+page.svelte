@@ -1,4 +1,8 @@
 <script>
+	import { onMount } from 'svelte';
+	import { flip } from 'svelte/animate';
+	import { expoOut } from 'svelte/easing';
+
 	/**
 	 * @type {{
 	 *  name: string;
@@ -11,7 +15,7 @@
 	 *  }[]
 	 * }[]}
 	 */
-	let sections = [
+	let sections = $state([
 		{
 			name: 'Tags',
 			slug: 'tags',
@@ -218,25 +222,16 @@
 				}
 			]
 		}
-	];
+	]);
 </script>
 
 <div class="page">
-	<section>
-		<h1>
-			{Math.round(
-				(sections.flatMap((s) => s.items.filter((i) => !i.wip)).length /
-					sections.flatMap((s) => s.items).length) *
-					100
-			)}% Done!
-		</h1>
-	</section>
 	{#each sections as section}
 		<section>
 			<h1>{section.name}</h1>
 			<ul>
 				{#each section.items as item}
-					<li>
+					<li class="typography">
 						<a
 							aria-disabled={item.wip ? 'true' : undefined}
 							href="/zvelte-references/{section.slug}/{item.slug}"
@@ -244,10 +239,10 @@
 							{item.name}
 						</a>
 						{#if 'text' in item && item.text}
-							<p>{item.text}</p>
+							<div>{item.text}</div>
 						{/if}
 						{#if item.wip}
-							<p class="wip">DOC in progress</p>
+							<div class="wip">DOC in progress</div>
 						{/if}
 					</li>
 				{/each}
@@ -279,21 +274,10 @@
 				gap: 1rem;
 
 				a {
-					box-shadow: inset 0 -1px rgb(var(--color-500));
 					margin-bottom: 0.5rem;
-					opacity: 0.75;
-
-					&:hover {
-						opacity: 1;
-					}
-
-					&[aria-disabled='true'] {
-						pointer-events: none;
-						opacity: 0.5;
-					}
 				}
 
-				p {
+				div {
 					&.wip {
 						font-style: italic;
 						opacity: 0.5;

@@ -11,9 +11,21 @@
 
 <div class="container">
 	<nav>
-		<a href="/">
+		<a href="/" class="--unset">
 			<img src="/zvelte-logo.svg" alt="" />
 		</a>
+
+		<ul class="links typography">
+			<li>
+				<a href="/docs/introduction">DOC</a>
+			</li>
+			<li>
+				<a href="/tutorial">Tutorial</a>
+			</li>
+			<li>
+				<a href="/zvelte-references">Zvelte References</a>
+			</li>
+		</ul>
 	</nav>
 	<main>
 		{@render children()}
@@ -32,11 +44,22 @@
 	}
 
 	nav {
+		display: flex;
+		align-items: center;
+
 		border-bottom: 1px solid rgb(var(--color-800));
 		padding: 1rem;
 
 		img {
-			height: 4rem;
+			height: 3rem;
+		}
+
+		.links {
+			margin-left: auto;
+			margin-right: 2rem;
+
+			display: flex;
+			gap: 1rem;
 		}
 	}
 </style>

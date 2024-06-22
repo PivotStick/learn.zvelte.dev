@@ -1,10 +1,6 @@
-<div>
-	<p>
-		<a href="/tutorial">Tutorial</a>
-	</p>
-	<p>
-		<a href="/zvelte-references">Zvelte References</a>
-	</p>
+<div class="typography">
+	<h1>Welcome!</h1>
+	<p>This website is a work in progress. Check out the <a href="/docs/introduction">docs</a></p>
 </div>
 
 <style>
