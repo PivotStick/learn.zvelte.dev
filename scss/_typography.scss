@@ -148,4 +148,8 @@
 			}
 		}
 	}
+
+	:where([id]) {
+		scroll-margin-top: 3rem;
+	}
 }
