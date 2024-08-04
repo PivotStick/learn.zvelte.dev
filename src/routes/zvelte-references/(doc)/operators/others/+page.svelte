@@ -18,7 +18,7 @@
 			value={`
 {% for i in 1..5 %}{{ i }}{% endfor %}
 
-{# is equivalent to #}
+<!-- is equivalent to -->
 {% for i in [1, 2, 3, 4, 5] %}{{ i }}{% endfor %}
 `.trim()}
 		/>
@@ -59,7 +59,7 @@
 		<Editor
 			extensions={[twig()]}
 			value={`
-{# returns the value of foo if it is defined and not null, 'no' otherwise #}
+<!-- returns the value of foo if it is defined and not null, 'no' otherwise -->
 {{ foo ?? 'no' }}
 `.trim()}
 		/>

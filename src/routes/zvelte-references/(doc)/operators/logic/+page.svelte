@@ -6,7 +6,7 @@
 	</li>
 
 	<li>
-		<code>or</code> Returns true if the left or the right operand is true.
+		<code>or, ||</code> Returns true if the left or the right operand is true.
 	</li>
 
 	<li>

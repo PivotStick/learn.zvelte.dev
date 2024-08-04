@@ -11,11 +11,11 @@
 	extensions={[twig()]}
 	value={`
 {{ "I like Twig.\\nYou will like it too."|nl2br }}
-{# outputs
+<!-- outputs
 
     I like Twig.<br />
     You will like it too.
 
-#}
+-->
 `.trim()}
 />

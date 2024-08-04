@@ -12,7 +12,6 @@
 	import Filetree from './filetree/Filetree.svelte';
 	import { javascript } from '@codemirror/lang-javascript';
 	import { html } from '@codemirror/lang-html';
-	import deepmerge from 'deepmerge';
 
 	let { data } = $props();
 

@@ -19,7 +19,7 @@
 ] %}
 
 {{ people|map(p => p.first ~ " " ~ p.last)|join(', ') }}
-{# outputs Bob Smith, Alice Dupond #}
+<!-- outputs Bob Smith, Alice Dupond -->
 `.trim()}
 />
 
@@ -34,7 +34,7 @@
 } %}
 
 {{ people|map((value, key) => key ~ " " ~ value)|join(', ') }}
-{# outputs Bob Smith, Alice Dupond #}
+<!-- outputs Bob Smith, Alice Dupond -->
 `.trim()}
 />
 

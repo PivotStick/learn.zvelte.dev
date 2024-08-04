@@ -12,12 +12,12 @@
 	extensions={[twig()]}
 	value={`
 {% for i in [1, 2, 3, 4, 5]|slice(1, 2) %}
-    {# will iterate over 2 and 3 #}
+    <!-- will iterate over 2 and 3 -->
 {% endfor %}
 
 {{ '12345'|slice(1, 2) }}
 
-{# outputs 23 #}
+<!-- outputs 23 -->
 `.trim()}
 />
 
@@ -27,7 +27,7 @@
 	extensions={[twig()]}
 	value={`
 {% for i in [1, 2, 3, 4, 5]|slice(start, length) %}
-    {# ... #}
+    <!-- ... -->
 {% endfor %}
 `.trim()}
 />
@@ -63,19 +63,19 @@
     {{ key }} - {{ value }}
 {% endfor %}
 
-{# output
+<!--
     1 - 2
     2 - 3
-#}
+-->
 
 {% for key, value in [1, 2, 3, 4, 5]|slice(1, 2) %}
     {{ key }} - {{ value }}
 {% endfor %}
 
-{# output
+<!--
     0 - 2
     1 - 3
-#}
+-->
 `.trim()}
 />
 

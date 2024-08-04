@@ -38,8 +38,8 @@
 	extensions={[twig()]}
 	value={`
 {% set foo = false %}
-{{ foo|default(true) }} {# true #}
-{{ foo ?? true }} {# false #}
+{{ foo|default(true) }} <!-- true -->
+{{ foo ?? true }} <!-- false -->
 `.trim()}
 />
 

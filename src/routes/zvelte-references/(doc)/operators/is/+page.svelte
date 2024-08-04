@@ -18,12 +18,12 @@
 <Editor
 	extensions={[twig()]}
 	value={`
-{# defined works with variable names #}
+<!-- defined works with variable names -->
 {% if foo is defined %}
     ...
 {% endif %}
 
-{# and attributes on variables names #}
+<!-- and attributes on variables names -->
 {% if foo.bar is defined %}
     ...
 {% endif %}
@@ -50,10 +50,6 @@
 
 <h2>null</h2>
 
-<p><code>null</code> returns <code>true</code> if the variable is <code>null</code>:</p>
-
-<Editor extensions={[twig()]} value={`{{ var is null }}`} />
-
 <h2>empty</h2>
 
 <p>
@@ -67,5 +63,20 @@
 {% if foo is empty %}
     ...
 {% endif %}
+`.trim()}
+/>
+
+<p>Everything else will result in a simple "===" check</p>
+
+<Editor
+	extensions={[twig()]}
+	value={`
+{{ var is null }}
+
+{{ 2 == "2" }}
+<!-- outputs true -->
+
+{{ 2 is "2" }}
+<!-- outputs false -->
 `.trim()}
 />

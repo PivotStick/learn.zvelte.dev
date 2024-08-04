@@ -30,8 +30,10 @@
 <Editor
 	extensions={[twig()]}
 	value={`
+{% import Component from "./Component.zvelte" %}
+
 {% key value %}
-	<zvelte key="./Component.zvelte" />
+	<Component />
 {% endkey %}
 `.trim()}
 />

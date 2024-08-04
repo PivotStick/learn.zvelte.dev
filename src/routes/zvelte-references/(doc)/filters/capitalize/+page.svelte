@@ -13,6 +13,6 @@
 	value={`
 {{ 'my first car'|capitalize }}
 
-{# outputs 'My first car' #}
+<!-- outputs 'My first car' -->
 `.trim()}
 />

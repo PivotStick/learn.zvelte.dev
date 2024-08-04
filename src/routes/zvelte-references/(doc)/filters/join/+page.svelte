@@ -12,7 +12,7 @@
 	extensions={[twig()]}
 	value={`
 {{ [1, 2, 3]|join }}
-{# returns 123 #}
+<!-- returns 123 -->
 `.trim()}
 />
 
@@ -25,7 +25,7 @@
 	extensions={[twig()]}
 	value={`
 {{ [1, 2, 3]|join('|') }}
-{# outputs 1|2|3 #}
+<!-- outputs 1|2|3 -->
 `.trim()}
 />
 
@@ -38,7 +38,7 @@
 	extensions={[twig()]}
 	value={`
 {{ [1, 2, 3]|join(', ', ' and ') }}
-{# outputs 1, 2 and 3 #}
+<!-- outputs 1, 2 and 3 -->
 `.trim()}
 />
 

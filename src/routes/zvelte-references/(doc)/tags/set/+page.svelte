@@ -20,7 +20,7 @@
 <Editor
 	extensions={[twig()]}
 	value={`
-{# displays bar #}
+<!-- displays bar -->
 {{ foo }}
 `.trim()}
 />
@@ -45,7 +45,7 @@ The assigned value can be any valid Twig expression:
 	value={`
 {% set foo, bar = 'foo', 'bar' %}
 
-{# is equivalent to #}
+<!-- is equivalent to -->
 
 {% set foo = 'foo' %}
 {% set bar = 'bar' %}
@@ -80,7 +80,7 @@ The assigned value can be any valid Twig expression:
     {% set foo = item %}
 {% endfor %}
 
-{# foo is NOT available #}
+<!-- foo is NOT available -->
 `.trim()}
 	/>
 
@@ -94,7 +94,7 @@ The assigned value can be any valid Twig expression:
     {% set foo = item %}
 {% endfor %}
 
-{# foo is available #}
+<!-- foo is available -->
 `.trim()}
 	/>
 </blockquote>

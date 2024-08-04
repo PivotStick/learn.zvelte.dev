@@ -11,7 +11,7 @@
 <Editor
 	extensions={[twig()]}
 	value={`
-{# returns true #}
+<!-- returns true -->
 
 {{ 1 in [1, 2, 3] }}
 
@@ -32,7 +32,7 @@
 	value={`
 {% if 1 not in [1, 2, 3] %}
 
-{# is equivalent to #}
+<!-- is equivalent to -->
 {% if not (1 in [1, 2, 3]) %}
 `.trim()}
 />

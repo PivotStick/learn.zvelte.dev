@@ -12,7 +12,7 @@
 	extensions={[twig()]}
 	value={`
 {% set foo = "one,two,three"|split(',') %}
-{# foo contains ['one', 'two', 'three'] #}
+<!-- foo contains ['one', 'two', 'three'] -->
 `.trim()}
 />
 
@@ -37,7 +37,7 @@
 	extensions={[twig()]}
 	value={`
 {% set foo = "one,two,three,four,five"|split(',', 3) %}
-{# foo contains ['one', 'two', 'three,four,five'] #}
+<!-- foo contains ['one', 'two', 'three,four,five'] -->
 `.trim()}
 />
 
@@ -50,10 +50,10 @@
 	extensions={[twig()]}
 	value={`
 {% set foo = "123"|split('') %}
-{# foo contains ['1', '2', '3'] #}
+<!-- foo contains ['1', '2', '3'] -->
 
 {% set bar = "aabbcc"|split('', 2) %}
-{# bar contains ['aa', 'bb', 'cc'] #}
+<!-- bar contains ['aa', 'bb', 'cc'] -->
 `.trim()}
 />
 

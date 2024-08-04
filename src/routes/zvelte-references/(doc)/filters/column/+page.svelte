@@ -11,7 +11,7 @@
 
 {% set fruits = items|column('fruit') %}
 
-{# fruits now contains ['apple', 'orange'] #}
+<!-- fruits now contains ['apple', 'orange'] -->
 `.trim()}
 />
 

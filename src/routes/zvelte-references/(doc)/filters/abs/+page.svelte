@@ -3,11 +3,11 @@
 	import { twig } from '@ssddanbrown/codemirror-lang-twig';
 
 	let example = `
-{# number = -5 #}
+<!-- number = -5 -->
 
 {{ number|abs }}
 
-{# outputs 5 #}
+<!-- outputs 5 -->
 `.trim();
 </script>
 

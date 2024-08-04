@@ -12,21 +12,21 @@
 <Editor
 	extensions={[twig()]}
 	value={`
-{{ '  I like Twig.  '|trim }}
+{{ '  I like Zvelte.  '|trim }}
 
-{# outputs 'I like Twig.' #}
+<!-- outputs 'I like Zvelte.' -->
 
-{{ '  I like Twig.'|trim('.') }}
+{{ '  I like Zvelte.'|trim('.') }}
 
-{# outputs '  I like Twig' #}
+<!-- outputs '  I like Zvelte' -->
 
-{{ '  I like Twig.  '|trim(side='left') }}
+{{ '  I like Zvelte.  '|trim(side='left') }}
 
-{# outputs 'I like Twig.  ' #}
+<!-- outputs 'I like Zvelte.  ' -->
 
-{{ '  I like Twig.  '|trim(' ', 'right') }}
+{{ '  I like Zvelte.  '|trim(' ', 'right') }}
 
-{# outputs '  I like Twig.' #}
+<!-- outputs '  I like Zvelte.' -->
 `.trim()}
 />
 

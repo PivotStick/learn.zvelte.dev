@@ -12,6 +12,6 @@
 	value={`
 {{ 'WELCOME'|lower }}
 
-{# outputs 'welcome' #}
+<!-- outputs 'welcome' -->
 `.trim()}
 />

@@ -15,7 +15,7 @@
 {% set sizes = [34, 36, 38, 40, 42] %}
 
 {{ sizes|filter(v => v > 38)|join(', ') }}
-{# output 40, 42 #}
+<!-- output 40, 42 -->
 `.trim()}
 />
 
@@ -37,7 +37,7 @@
 {% for k, v in sizes|filter(v => v > 38) -%}
     {{ k }} = {{ v }}
 {% endfor %}
-{# output l = 40 xl = 42 #}
+<!-- output l = 40 xl = 42 -->
 `.trim()}
 />
 
@@ -49,7 +49,7 @@
 {% for k, v in sizes|filter((v, k) => v > 38 and k != "xl") -%}
     {{ k }} = {{ v }}
 {% endfor %}
-{# output l = 40 #}
+<!-- output l = 40 -->
 `.trim()}
 />
 

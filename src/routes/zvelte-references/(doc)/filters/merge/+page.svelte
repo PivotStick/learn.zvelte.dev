@@ -1,8 +1,6 @@
 <script>
 	import Editor from '$lib/components/Editor.svelte';
 	import { twig } from '@ssddanbrown/codemirror-lang-twig';
-	import Args from '../Args.svelte';
-	import Page from '../abs/+page.svelte';
 </script>
 
 <p>
@@ -16,7 +14,7 @@
 
 {% set values = values|merge(['apple', 'orange']) %}
 
-{# values now contains [1, 2, 'apple', 'orange'] #}
+<!-- values now contains [1, 2, 'apple', 'orange'] -->
 `.trim()}
 />
 
@@ -33,7 +31,7 @@
 
 {% set items = items|merge({ 'peugeot': 'car', 'renault': 'car' }) %}
 
-{# items now contains {'apple': 'fruit', 'orange': 'fruit', 'peugeot': 'car', 'renault': 'car'} #}
+<!-- items now contains {'apple': 'fruit', 'orange': 'fruit', 'peugeot': 'car', 'renault': 'car'} -->
 `.trim()}
 />
 
