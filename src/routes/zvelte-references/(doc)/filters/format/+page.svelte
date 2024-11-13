@@ -12,7 +12,7 @@
 <Editor
 	extensions={[twig()]}
 	value={`
-{{ "I like %s and %s."|format(foo, "bar") }}
+{{ "I like %s and %s."|format("foo", "bar") }}
 
 <!-- outputs I like foo and if the foo parameter equals to the foo string. -->
 `.trim()}
