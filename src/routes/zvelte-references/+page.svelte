@@ -39,6 +39,11 @@
 				{
 					name: 'key',
 					slug: 'key'
+				},
+				{
+					name: 'await',
+					slug: 'await',
+					wip: true
 				}
 			]
 		},
