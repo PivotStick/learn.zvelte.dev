@@ -10,10 +10,10 @@
 <Editor
 	extensions={[twig()]}
 	value={`
-{{ "I like Twig.\\nYou will like it too."|nl2br }}
+{{ "I like Tomatoes.\\nYou will like it too."|nl2br }}
 <!-- outputs
 
-    I like Twig.<br />
+    I like Tomatoes.<br />
     You will like it too.
 
 -->

@@ -1,4 +1,4 @@
-<p>Twig allows you to do math in templates; the following operators are supported:</p>
+<p>Zvelte allows you to do math in templates; the following operators are supported:</p>
 
 <ul>
 	<li>

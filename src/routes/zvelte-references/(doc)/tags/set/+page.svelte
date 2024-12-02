@@ -30,7 +30,7 @@
 <Editor
 	extensions={[twig()]}
 	value={`
-The assigned value can be any valid Twig expression:
+The assigned value can be any valid Zvelte expression:
 
 {% set foo = [1, 2] %}
 {% set foo = {'foo': 'bar'} %}
