@@ -1,4 +1,5 @@
 <script>
+	import Self from './Directory.svelte';
 	import { getFiltreeContext } from './context.svelte';
 
 	/**
@@ -27,7 +28,7 @@
 					{name}
 				</button>
 				{#if open}
-					<svelte:self tree={value.directory} path={fullpath} />
+					<Self tree={value.directory} path={fullpath} />
 				{/if}
 			</li>
 		{:else if value.file}

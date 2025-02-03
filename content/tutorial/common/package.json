@@ -1,16 +1,16 @@
 {
-  "name": "common",
-  "module": "index.ts",
-  "type": "module",
-  "scripts": {
-    "dev": "vite dev"
-  },
-  "dependencies": {
-    "@pivotass/zvelte": "^0.3.15",
-    "vite": "^5.2.11"
-  },
-  "devDependencies": {
-    "esbuild-wasm": "^0.21.4",
-    "sass": "^1.77.2"
-  }
+	"name": "common",
+	"module": "index.ts",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev"
+	},
+	"dependencies": {
+		"@pivotass/zvelte": "^0.4.166",
+		"vite": "^5.2.11"
+	},
+	"devDependencies": {
+		"esbuild-wasm": "^0.21.4",
+		"sass": "^1.77.2"
+	}
 }

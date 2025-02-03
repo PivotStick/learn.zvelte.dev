@@ -1,6 +1,7 @@
-import { mount } from '@pivotass/zvelte';
+import { mount } from '@pivotass/zvelte/internal/client';
 
-mount({
-	target: document.getElementById('root'),
-	source: `<h1>Welcome!</h1>`
+import App from './App.zvelte';
+
+mount(App, {
+	target: document.getElementById('root')
 });

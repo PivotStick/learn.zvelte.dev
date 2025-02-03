@@ -13,7 +13,9 @@
 	import { javascript } from '@codemirror/lang-javascript';
 	import { html } from '@codemirror/lang-html';
 
-	let { data } = $props();
+	let { data: _data } = $props();
+
+	let data = $state(_data);
 
 	/**
 	 * @type {HTMLIFrameElement=}
@@ -189,7 +191,7 @@
 					extensions.push(javascript());
 				}
 
-				if (data.content.exercise.focus.endsWith('.twig')) {
+				if (data.content.exercise.focus.endsWith('.zvelte')) {
 					extensions.push(
 						html({
 							selfClosingTags: true

@@ -29,20 +29,20 @@
 					slug: 'for'
 				},
 				{
-					name: 'set',
-					slug: 'set'
-				},
-				{
-					name: 'snippet',
-					slug: 'snippet'
-				},
-				{
 					name: 'key',
 					slug: 'key'
 				},
 				{
 					name: 'await',
 					slug: 'await'
+				},
+				{
+					name: 'snippet',
+					slug: 'snippet'
+				},
+				{
+					name: 'set',
+					slug: 'set'
 				}
 			]
 		},
