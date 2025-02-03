@@ -42,8 +42,7 @@
 				},
 				{
 					name: 'await',
-					slug: 'await',
-					wip: true
+					slug: 'await'
 				}
 			]
 		},
